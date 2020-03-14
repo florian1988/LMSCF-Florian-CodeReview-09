@@ -6,7 +6,8 @@ CREATE table sender( id_sender int AUTO_INCREMENT, PRIMARY key(id_sender),
                     first_name_sender varchar(50),
                     last_name_sender varchar(50),
                     address_sender varchar (100),
-                    ZIP_sender smallint);
+                    fk_zip_sender int,
+                    fk_area_sender int);
 
 
 
@@ -14,15 +15,16 @@ CREATE table recipient( id_recipient int AUTO_INCREMENT, PRIMARY key(id_recipien
                     first_name_recipient varchar(50),
                     last_name_recipient varchar(50),
                     address_recipient varchar (100),
-                    ZIP_recipient smallint);
+                    fk_zip_recipient int,
+                    fk_area_recipient int);
 
 
-CREATE table letter( id_letter int AUTO_INCREMENT, PRIMARY key(id_letter));
+CREATE table letter( id_letter int AUTO_INCREMENT, PRIMARY key(id_letter)
+					weight smallint);
 
 
-CREATE table pick_up_location( id_pick_up_location int AUTO_INCREMENT, PRIMARY key(id_pick_up_location),
-                   address varchar(100),
-                   locker_nr int);
+CREATE table package( id_package int AUTO_INCREMENT, PRIMARY key(id_package),
+                   wight smallint);
 
 
 CREATE table local_post_counter( id_local_post_counter int AUTO_INCREMENT, PRIMARY key(id_local_post_counter),
